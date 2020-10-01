@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/_head :: head"></head>
+<body>
+<header th:fragment="header">
+    <nav class="navbar navbar-expand-md navbar-light justify-content-center bkg navvy-stuff">
+        <a class="navbar-brand" th:href="@{/}">Wisconsin's Famous Fried Chicken</a>
+        <ul class="navbar-nav">
+            <li sec:authorize="isAnonymous()" class="nav-item">
+                <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+            <li sec:authorize="isAuthenticated()" class="nav-item">
+                <a th:href="@{/benefits}" class="nav-link mr-3">Benefits</a>
+            </li>
+            <li sec:authorize="hasAuthority('major')" class="nav-item">
+            <a th:href="@{/SUPER-SECRET-STUFF}" class="nav-link mr-3">Secret Recipe</a>
+            </li>
+            <li sec:authorize="isAuthenticated()" class="nav-item">
+                <form th:action="@{/logout}" method="post" >
+                    <input class="float-right ml-5" type="submit" value="Logout">
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <div class="text-center mt-4" sec:authorize="isAuthenticated()">
+        <h1 th:text="|Bawk Bawk ${#authentication.name}!|"></h1>
+    </div>
+</header>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+.logo
+{
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    margin: auto;
+    display: block;
+}
+.bkg
+{
+    background-color: coral;
+}
+.navvy-stuff
+{
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-size: 30px;
+}
+.welcome-stuff
+{
+    font-family: 'Rubik Mono One', sans-serif;
+}
+input[type=password], input[type=text] {
+    width: 100%;
+    padding: 16px 20px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f1f1f1;
+    font-size: larger;
+}
+input#login{
+    width: 100%;
+    background-color: #333;
+    color: #f1f1f1;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+footer
+{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 85%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

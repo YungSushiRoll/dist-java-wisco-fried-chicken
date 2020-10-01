@@ -1,0 +1,24 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="frags/_head :: head"></head>
+<div th:insert="frags/_header :: header"></div>
+
+    <div class="container text-center mt-5">
+        <h3 class="mb-3 navvy-stuff">Sign-in Chickadee!!</h3>
+        <form th:action="@{/login}" method="post">
+            <label class="navvy-stuff" for="username">Username</label>
+            <input type="text" id="username" name="username" autofocus="autofocus"/>
+            <br/>
+            <label class="navvy-stuff" for="password">Password</label>
+            <input type="password" id="password" name="password"/>
+            <br/>
+            <input id="login" type="submit" value="Log in"/>
+        </form>
+        <div th:if="${param.error}" class="alert">
+            Invalid username or password.
+        </div>
+        <div th:if="${param.logout}" class="alert">
+            You have been logged out.
+        </div>
+    </div>
+
+<div th:insert="frags/_footer :: footer"></div>
